@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-primary: #172A46;
+    --color-background: #F8F7F3;
+    --color-text: #171A21;
+    --color-muted: #6B7280;
+}
+
+body {
+
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial;
+    font-size: 16px;
+    line-height: 1.8;
+    direction: rtl;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#hero .container  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#nav {
+ padding: 20px 0; 
+}
+.logo{
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+
+}
+.nav-link{
+    text-decoration: none;
+    
+}
+.nav-links{
+    display: flex;
+    gap: 30px;
+}
+ 
+#hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+#hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-actions{
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition:   background-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;;
+}
+
+.btn-primary{
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+
+.btn-secondary{
+    border: solid 1px var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #263D5C;
+}
+
+.btn-secondary:hover {
+
+    background-color: var(--color-primary);
+    color: var(--color-background);
+}
+.visual-card {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 16px;
+    width: 420px;
+    height: 320px;
+    padding: 32px;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    border-radius: 8px;
+}
+
+.visual-card span {
+   margin-top: auto;
+}
