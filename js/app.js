@@ -16,7 +16,7 @@ const select = document.querySelector(".select")
 const servicesCard = document.querySelector(".services-grid")
 const projectCards =document.querySelector(".projects-cards")
 const projectDetails = document.querySelector(".project-details")
-
+const taptotop = document.querySelector("#back-to-top")
 
 
 
@@ -26,12 +26,15 @@ function addShowform(){
 }
 
 menuToggle.addEventListener("click",()=>{
-  
     navLinks.classList.toggle("open");
     menuToggle.classList.toggle("active");
-
 })
-
+navLinks.addEventListener("click", (event) => {
+    if (event.target.classList.contains("nav-link")) {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("active");
+    }
+});
 
 btnContact.addEventListener("click", ()=>{
         addShowform();
@@ -112,6 +115,7 @@ form.addEventListener("submit", (event)=>{
         email.value = "";
         numberPhone.value = "";
         idea.value= "";
+        select.value="";
 
     
     
@@ -124,6 +128,7 @@ projectCards.addEventListener("click" , (event)=>{
         return
     }
     card.classList.add("showDetails")
+    if (!card) return;
 })
 
 servicesCard.addEventListener("click",(event)=>{
@@ -133,4 +138,21 @@ servicesCard.addEventListener("click",(event)=>{
         return
     }
     servicecard.classList.add("showService")
+    if (!servicecard) return;
+
+})
+
+window.addEventListener("scroll",()=>{
+    if(window.scrollY >400){
+        taptotop.classList.add("show")
+    }else{
+        taptotop.classList.remove("show")
+    }
+})
+
+taptotop.addEventListener("click",()=>{
+    window.scrollTo({
+        top : 0 ,
+        btnContact : "smooth"
+    })
 })

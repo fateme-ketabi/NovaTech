@@ -273,13 +273,29 @@ body {
     align-items: center;
 }
 
+.service-image{
+    position:absolute;  
+    z-index:0;
+    inset: 0;
+    
+}
+
+.service-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .service-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     position: relative;
     background-color: var(--color-primary);
     color: var(--color-background);
     height: 240px;
     border-radius: 8px;
-    padding: 32px ;
     transition: transform 0.3s ease ,
     box-shadow 0.3s ease;
 }
@@ -291,11 +307,15 @@ body {
     margin-top: 20px;
 }
 .service-overly{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
+  position: absolute;  
   gap: 20px;
+  background-color:rgb(235, 233, 229, 0.85);
+  color: var(--color-primary);
+  z-index:3;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.3s ease;
 }
 
 .service-details{
@@ -638,9 +658,42 @@ footer h4 {
     align-self: center;
 }
 
+#back-to-top{
 
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    font-size: 28px;
+    font-weight:500;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+    transition: opacity 0.3s ease;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+#back-to-top:hover {
+    transform: translateY(-4px);
+}
 
 @media (max-width: 768px) {
+   
+    .logo{
+        font-size: 22px;
+    }
 
     #hero .container {
         display: flex;
@@ -804,7 +857,7 @@ footer h4 {
 /*cta*/ 
 
 #cta {
-    max-width: 768;
+    max-width: 768px;
 }
 
 
@@ -829,7 +882,13 @@ footer .container {
     gap: 10px;
 }
 
+#back-to-top{
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  right: 20px;
+  z-index: 10;
 
+}
   
-
-    }
+}
