@@ -123,22 +123,24 @@ form.addEventListener("submit", (event)=>{
 
 projectCards.addEventListener("click" , (event)=>{
     const card = event.target.closest(".project-card")
+    if (!card) return;
+
     if(event.target.closest(".close-project")){
         card.classList.remove("showDetails")
         return
     }
     card.classList.add("showDetails")
-    if (!card) return;
 })
 
 servicesCard.addEventListener("click",(event)=>{
     const servicecard = event.target.closest(".service-card")
+    if (!servicecard) return;
+    
     if(event.target.closest(".close-service")){
         servicecard.classList.remove("showService")
         return
     }
     servicecard.classList.add("showService")
-    if (!servicecard) return;
 
 })
 
@@ -153,6 +155,6 @@ window.addEventListener("scroll",()=>{
 taptotop.addEventListener("click",()=>{
     window.scrollTo({
         top : 0 ,
-        btnContact : "smooth"
+        behavior : "smooth"
     })
 })
